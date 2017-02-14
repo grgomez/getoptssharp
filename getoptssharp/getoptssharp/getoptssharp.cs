@@ -58,6 +58,7 @@ namespace getoptssharp
             if (args.Length == 0 || string.IsNullOrEmpty(opts))
             {
                 // There must be arguments and options
+                _flag = "?";
                 return false;
             }
 
@@ -91,6 +92,11 @@ namespace getoptssharp
             }
             else
             {
+                if (_opts_num == 0)
+                {
+                    _value = "?";
+                }
+
                 // No matches, return false
                 return false;
             }
